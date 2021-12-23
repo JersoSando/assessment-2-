@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => (acc + curr.price), 0);
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,8 +55,15 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    let taxTotal = (cartTotal * tax)
+    // console.log(taxTotal)
+    let finalNumber = (cartTotal + taxTotal) - couponValue;
+    // console.log(finalNumber)
+    return finalNumber
+}
 
-
+calcFinalPrice(5, 2, .06);
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -80,6 +88,12 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+    Name: getting a customers name allows restuarants to send offers and create personalization
+    Address: allows restuarants to see where their customers are coming from and how close they are to the location
+    Age: Restaurants can tailor their offers and environment to a certain age demographic 
+    Email: can send personalied offers and use as information for a rewards program to track how many times they come to the restuarant and how much they spend 
+    Gender: used to tailor premotional offers and learn their general demographic 
+
 */
 
 /*
@@ -88,3 +102,11 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    name: 'John Bobby',
+    address: '1234 Yellowstone N, Brooklyn Center, MN',
+    age: 25,
+    email: 'johnbobby@gmail.com',
+    gender: 'male'
+};
